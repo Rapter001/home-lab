@@ -47,46 +47,107 @@ The goal is to learn enterprise technologies while building a reliable and secur
 
 # 🌐 Network Overview
 
-```
-Internet
-    |
-  Modem
-    │
-Router/Firewall
-    |
-Cables/Mesh Network
-    │
-Proxmox 1
- ├── Ubuntu Server
- ├── Open Media Vault
- └── Home Assistant
-        |
-Proxmox 2
- ├── Eaglar Craft Server
- └── Game Server
-        │
-    Reverse Proxy
-        │
- ├── DNS
- ├── Monitoring
- ├── Applications
- └── Services
-```
+```mermaid
+flowchart TD
 
----
+Internet((Internet))
+Modem[ISP Modem]
+Firewall[Router / Firewall]
+VPN[WireGuard VPN]
+
+PX1[Proxmox Node 1]
+PX2[Proxmox Node 2]
+
+Ubuntu[Ubuntu Server]
+OMV[OpenMediaVault]
+HA[Home Assistant]
+
+Games[Game Servers]
+Eagle[EaglerCraft]
+
+Proxy[Reverse Proxy]
+Auth[TinyAuth<br/>2FA + ACLs]
+
+DNS[DNS / AdGuard]
+Apps[Applications]
+Monitor[Monitoring]
+
+Internet --> Modem
+Modem --> Firewall
+
+Firewall --> VPN
+Firewall --> PX1
+Firewall --> PX2
+
+PX1 --> Ubuntu
+PX1 --> OMV
+PX1 --> HA
+
+PX2 --> Games
+PX2 --> Eagle
+
+Firewall --> Proxy
+
+Proxy --> Auth
+
+Auth --> Apps
+Auth --> Monitor
+Auth --> DNS
+```
 
 # 🚀 Services
 
 | Service | Purpose | Status |
 |----------|----------|--------|
 | AdGuard Home | DNS Filtering | ✅ |
-| AdGuard Sync | DNS Sync | ✅ |
+| AdGuard Sync | DNS Configuration Sync | ✅ |
+| Adminer | Database Management UI | INTERNAL |
+| Beszel | Server Monitoring Dashboard | ✅ |
+| Beszel Agent | Monitoring Agent | INTERNAL |
+| Brave Browser | Remote Browser | ✅ |
+| Chromium | Remote Browser | ✅ |
+| Chat | Internal Chat Application | INTERNAL |
+| Cloudflared | Cloudflare Tunnel | ✅ |
+| CrowdSec | Security / Threat Detection | ✅ |
+| DDNS Updater | Dynamic DNS Updates | ⚠️ |
+| Excalidraw | Online Diagram Editor | ✅ |
+| File Browser | Web File Management | ✅ |
+| Homer | Homelab Dashboard | ✅ |
+| Immich | Photo & Video Management | ✅ |
+| Immich Machine Learning | AI Photo Processing | INTERNAL |
+| Immich PostgreSQL | Immich Database | INTERNAL |
+| Immich Redis | Immich Cache | INTERNAL |
+| IT Tools | Developer Utilities | ✅ |
+| Komodo Core | Container Management Platform | ✅ |
+| Komodo MongoDB | Komodo Database | INTERNAL |
+| Komodo Periphery | Remote Container Agent | INTERNAL |
+| MySQL | Database Server | INTERNAL |
+| MySpeed | Internet Speed Monitoring | ✅ |
+| n8n | Workflow Automation | ✅ |
+| Navidrome | Music Streaming Server | ✅ |
 | Nginx Proxy Manager Plus | Reverse Proxy | ✅ |
-| WireGuard | VPN | ✅ |
+| Ntfy | Push Notification Server | ✅ |
+| NUT WebGUI | UPS Monitoring | ✅ |
+| Ollama | Local AI Model Server | ✅ |
+| Open WebUI | AI Chat Interface | ✅ |
+| Paperless-ngx | Document Management | ✅ |
+| Paperless Broker | Document Processing Queue | INTERNAL |
+| Paperless Gotenberg | Document Conversion | INTERNAL |
+| Paperless Tika | Document Text Extraction | INTERNAL |
 | Portainer | Docker Management | ✅ |
-| Homepage | Dashboard | ✅ |
-| Poste | Email | INTERNAL |
-| Beszel | Metrics | ✅ |
+| Portainer Agent | Remote Docker Management | INTERNAL |
+| QR Share | File / QR Sharing | INTERNAL |
+| Rajendra Singh Website | Personal Website | ✅ |
+| Redis | Cache Database | INTERNAL |
+| Tailscale | Mesh VPN | ✅ |
+| Termix | Terminal Management | ✅ |
+| TinyAuth | Authentication + 2FA + ACLs | ✅ |
+| Trilium | Knowledge Base / Notes | ✅ |
+| Under Maintenance | Maintenance Page | INTERNAL |
+| Uptime Kuma | Service Monitoring | ✅ |
+| Watchtower | Automatic Container Updates | ✅ |
+| WireGuard Dashboard | VPN Management | ✅ |
+| ZeroByte | Application Service | ✅ |
 
 ---
 
