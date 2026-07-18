@@ -1,17 +1,17 @@
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/brave.png" width="80">
+  <img src="https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/CONTAINER_NAME.png" width="80">
 </p>
 
-<h1 align="center">BRAVE</h1>
+<h1 align="center">CONTAINER_NAME</h1>
 
 ## 📦 Container
 
 | Item | Details |
 |------|---------|
-| Name |BRAVE|
-| Image |linuxserver/brave:origin|
-| Version |LATEST|
-| Network Mode |bridge|
+| Name | |
+| Image | |
+| Version | |
+| Network Mode | |
 
 
 ---
@@ -22,18 +22,14 @@
 
 | Port | Protocol | Purpose |
 |------|----------|---------|
-|51666:3001| TCP | WEB |
+|  | TCP/UDP | WHY PORT |
 
 ---
 
 ## ⚙️ Environment
 
 ```env
-PUID=1000
-PGID=1000
-TZ=America/New_York
-CUSTOM_USER=USER
-PASSWORD=PASSWORD
+NONE
 ```
 
 ---
@@ -42,12 +38,14 @@ PASSWORD=PASSWORD
 
 | Host Path | Container Path |
 |-----------|----------------|
-|/docker-files/ahad-brave|/config|
+| | |
+| | |
+
 ---
 
 ## 🔗 Networks
 
 | Network | Purpose |
 |---------|---------|
-| 172.17.0.0/16 | Docker bridge Network |
+| 192.168.1.0/24 | Main LAN Network |
 ---
