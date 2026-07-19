@@ -122,7 +122,7 @@ Auth --> DNS
 | Komodo MongoDB | Komodo Database | INTERNAL |
 | Komodo Periphery | Remote Container Agent | INTERNAL |
 | MySQL | Database Server | INTERNAL |
-| MySpeed | Internet Speed Monitoring | ✅ |
+| MySpeed | Internet Speed Monitoring | INTERNAl |
 | n8n | Workflow Automation | ✅ |
 | Navidrome | Music Streaming Server | ✅ |
 | Nginx Proxy Manager Plus | Reverse Proxy | ✅ |
