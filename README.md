@@ -147,7 +147,7 @@ Auth --> DNS
 | Uptime Kuma | Service Monitoring | ✅ |
 | Watchtower | Automatic Container Updates | ✅ |
 | WireGuard Dashboard | VPN Management | ✅ |
-| ZeroByte | Application Service | ✅ |
+| ZeroByte | Backup Service | ✅ |
 
 ---
 
